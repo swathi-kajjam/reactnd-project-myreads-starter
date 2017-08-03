@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import Title from './Title';
-import BookShelves from './BookShelves';
+import MyReads from './components/MyReads';
+import * as BooksAPI from './utils/BooksAPI';
 
 class BooksApp extends Component{
+    state = {
+        books:[]
+    }
+
+    componentDidMount(){
+        BooksAPI.getAll().then(books => {
+            this.setState({books})
+        })
+    }
+
     render(){
         return(
-            <div className="list-books">
-              <Title/>
-              <BookShelves/>
-            </div>
+          <MyReads books={this.state.books}/>
         )
     }
 }
 
-export default BooksApp
+export default BooksApp;

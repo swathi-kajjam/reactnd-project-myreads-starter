@@ -1,6 +1,6 @@
 import React from 'react';
 
-/*stateless component */
+/*stateless functional component */
 function Title(){
     return(
         <div className="list-books-title">
