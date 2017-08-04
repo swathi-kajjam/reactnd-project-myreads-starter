@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import MyReads from './components/MyReads';
 import * as BooksAPI from './utils/BooksAPI';
+import { Route } from 'react-router-dom';
+import Search from './components/Search';
 
 class BooksApp extends Component{
     state = {
@@ -10,7 +12,6 @@ class BooksApp extends Component{
 
     componentDidMount(){
         BooksAPI.getAll().then(books => {
-            console.log(books)
             this.setState({books})
         })
     }
@@ -29,7 +30,12 @@ class BooksApp extends Component{
 
     render(){
         return(
-          <MyReads books={this.state.books} updateBookShelf={this.updateBookShelf}/>
+          <div>
+              <Route exact path="/" render={()=>
+                  <MyReads books={this.state.books} updateBookShelf={this.updateBookShelf}/>
+              }/>
+              <Route path="/search" component={Search}/>
+          </div>
         )
     }
 }
