@@ -45,7 +45,22 @@ class BooksApp extends Component{
     searchBooks = (query, maxResults) => {
 
         return BooksAPI.search(query, maxResults)
-                        .catch(e => console.error(e))
+            .then(searchBooks => {
+
+                /* Update searchBooks shelf based on the current books state*/
+                if(this.state.books && this.state.books.length > 0) {
+                    searchBooks.map(book => {
+                        const b = this.state.books.find(b => b.id === book.id);
+                        if (b) {
+                            book.shelf = b.shelf;
+                        }
+                        return book
+                    })
+                }
+
+               return searchBooks;
+            })
+            .catch(e => console.error(e))
     }
 
     render(){
