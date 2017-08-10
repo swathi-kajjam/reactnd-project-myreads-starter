@@ -14,7 +14,7 @@ class BooksApp extends Component{
 
         BooksAPI.getAll().then(books => {
             this.setState({books})
-        })
+        }).catch(e => console.error(e));
     }
 
     updateBookShelf = (book, shelf)=>{
@@ -24,12 +24,13 @@ class BooksApp extends Component{
           book.shelf = shelf;
           this.setState({books: this.state.books.filter(bk=> bk.id !== book.id).concat(book)})
 
-        });
+        }).catch(e => console.error(e));
 
     }
 
     searchBooks = (query, maxResults) => {
         return BooksAPI.search(query, maxResults)
+                        .catch(e => console.error(e))
     }
 
     render(){
