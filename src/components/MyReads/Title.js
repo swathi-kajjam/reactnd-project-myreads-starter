@@ -1,6 +1,9 @@
 import React from 'react';
 
-/*stateless functional component */
+/**
+ * @description - Title Component for MyReads Page
+ * @returns {HTML} - The Dom for the title
+ */
 function Title(){
     return(
         <div className="list-books-title">

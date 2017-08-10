@@ -1,9 +1,14 @@
 import React from 'react';
 import BookShelfChanger from './BookShelfChanger';
 
+/**
+ * @description - Represents the Book Component
+ * @param props - The props from parent component (BooksGrid)
+ * @returns {HTML} - The Dom needed for generating a Book
+ */
 function Book(props){
 
-    let {book, category} = props;
+    const {book, category} = props;
 
     return(
         <div>

@@ -1,22 +1,25 @@
-
-
+/**
+ * @description - Split and Capitalize first letter of every word in each Category
+ * @param s - eg: currentlyReading
+ * @returns {string} - eg: Currently Reading
+ */
 function capitalizeFirstLetter(s){
     return s.split(/(?=[A-Z])/).join(" ").replace(/^./, (char) => char.toUpperCase());
 }
 
 /**
- * categorizeBooks : categorize the books
+ * @description - categorize the books
  * @param books
- * @returns {{booksByCategory: Array, listOfAllCategories: Array}}
+ * @returns {booksByCategory: Array} eg:[booksByCategory: [currentlyReading:[], read:[], wantToRead:[]]]
  */
 function categorizeBooks(books){
-    let booksByCategory = [];
+    const booksByCategory = {};
 
-     if(books && books.length > 0) {
+     if (books && books.length > 0) {
 
          books.forEach(book => {
 
-             let shelf = book.shelf;
+             const shelf = book.shelf;
 
              if(shelf !== 'none') {
 
@@ -30,7 +33,7 @@ function categorizeBooks(books){
          })
      }
 
-    return booksByCategory;
+     return booksByCategory;
 }
 
 export {categorizeBooks, capitalizeFirstLetter};

@@ -5,6 +5,9 @@ import * as BooksAPI from './utils/BooksAPI';
 import { Route } from 'react-router-dom';
 import Search from './components/Search';
 
+/**
+ * BooksApp - My Reads Application
+ */
 class BooksApp extends Component{
     state = {
         books:[]
@@ -17,6 +20,11 @@ class BooksApp extends Component{
         }).catch(e => console.error(e));
     }
 
+    /**
+     * @description - Updates the book shelf
+     * @param book - The book to update
+     * @param shelf - The shelf to update
+     */
     updateBookShelf = (book, shelf)=>{
 
         BooksAPI.update(book, shelf).then(() => {
@@ -28,7 +36,14 @@ class BooksApp extends Component{
 
     }
 
+    /**
+     * @description - Returns Search results based on search query
+     * @param query - The Query to Search
+     * @param maxResults - The maxResults that needs to returned on Search
+     * @returns {Promise.<T>} - The promise containing books
+     */
     searchBooks = (query, maxResults) => {
+
         return BooksAPI.search(query, maxResults)
                         .catch(e => console.error(e))
     }

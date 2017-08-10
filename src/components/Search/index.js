@@ -3,19 +3,21 @@ import { categorizeBooks } from '../../utils/Utility';
 import BooksGrid from '../Common/BooksGrid';
 import SearchBox from './SearchBox';
 
+/**
+ * Search - Represents the Search Component
+ */
 class Search extends Component{
     state = {
         books: []
     }
 
+    /**
+     * @description - The handler which gets fired when search input gets changed
+     * @param query - The query to Search books for
+     * @param maxResults - The maximum number of results that needs to be returned on Search
+     */
     handleSearch = (query, maxResults) => {
-        if(query) {
-            this.props.searchBooks(query, maxResults)
-                .then(books => this.setState({books}))
-        }
-        else{
-            this.setState({books:[]})
-        }
+        query ? this.props.searchBooks(query, maxResults).then(books => this.setState({books})) : this.setState({books:[]})
     }
 
     render(){

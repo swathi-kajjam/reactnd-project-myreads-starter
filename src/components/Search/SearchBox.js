@@ -2,6 +2,9 @@ import React,  { Component } from 'react';
 import { debounce } from 'lodash';
 import { Link } from 'react-router-dom';
 
+/**
+ * SearchBox - Represents the SearchBox Component
+ */
 class SearchBox extends Component{
 
     state = {
@@ -15,6 +18,10 @@ class SearchBox extends Component{
         }, 500)
     }
 
+    /**
+     * @description - The event handler which gets fired when search input gets changed
+     * @param e - The event
+     */
     onChange = (e) => {
         this.setState({query: e.target.value.trim()})
         this.handleSearchDebounce()

@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 
+/**
+ * BookShelfChanger - Represents the book shelf changer Component
+ */
 class BookShelfChanger extends Component{
 
+    /**
+     * @description - Event handler which gets fired when category is changed
+     * @param e
+     */
     onChangeHandler = (e) => {
         this.props.book !== e.target.value && this.props.updateBookShelf(this.props.book, e.target.value)
     }

@@ -2,6 +2,11 @@ import React from 'react';
 import BookShelf from './BookShelf';
 import {categorizeBooks} from '../../utils/Utility';
 
+/**
+ * @description - Categorize books and call BookShelf for each Category
+ * @param props - The props from parent Component(index)
+ * @returns {HTML} - The DOM needed for creating book shelves
+ */
 function BookShelves(props){
 
     const booksByCategory = categorizeBooks(props.books);
@@ -9,15 +14,15 @@ function BookShelves(props){
     return (
         <div className="list-books-content">
             <div>
-                {
-                    Object.keys(booksByCategory).map(category => (
-                        <BookShelf key={category}
-                                   books={booksByCategory[category]}
-                                   category={category}
-                                   updateBookShelf={props.updateBookShelf}
-                        />
-                    ))
-                }
+                    { (booksByCategory && Object.keys(booksByCategory).length > 0) && (
+                        Object.keys(booksByCategory).map(category => (
+                            <BookShelf key={category}
+                                       books={booksByCategory[category]}
+                                       category={category}
+                                       updateBookShelf={props.updateBookShelf}
+                            />
+                        ))
+                    )}
             </div>
         </div>
     )
