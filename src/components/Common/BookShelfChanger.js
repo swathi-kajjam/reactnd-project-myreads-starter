@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * BookShelfChanger - Represents the book shelf changer Component
  */
 class BookShelfChanger extends Component{
+
+    static propTypes = {
+        book: PropTypes.object.isRequired,
+        category: PropTypes.string,
+        updateBookShelf: PropTypes.func.isRequired
+    }
 
     /**
      * @description - Event handler which gets fired when category is changed
@@ -28,6 +35,5 @@ class BookShelfChanger extends Component{
         )
     }
 }
-
 
 export default BookShelfChanger;

@@ -2,6 +2,7 @@ import React from 'react';
 import Title from './Title';
 import BookShelves from "./BookShelves";
 import AddBook from './AddBook';
+import PropTypes from 'prop-types';
 
 /**
  * @description - Represents MyReads page which shows books with categories [Read, Want to Read and Currently Reading Category]
@@ -16,6 +17,10 @@ function MyReads(props){
             <AddBook/>
         </div>
     )
+}
+
+MyReads.propTypes = {
+    books: PropTypes.array.isRequired
 }
 
 export default MyReads;

@@ -1,6 +1,7 @@
 import React from 'react';
 import BookShelf from './BookShelf';
 import {categorizeBooks} from '../../utils/Utility';
+import PropTypes from 'prop-types';
 
 /**
  * @description - Categorize books and call BookShelf for each Category
@@ -27,6 +28,10 @@ function BookShelves(props){
         </div>
     )
 
+}
+
+BookShelves.propTypes = {
+    books: PropTypes.array.isRequired
 }
 
 export default BookShelves;

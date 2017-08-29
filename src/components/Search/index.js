@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { categorizeBooks } from '../../utils/Utility';
 import BooksGrid from '../Common/BooksGrid';
 import SearchBox from './SearchBox';
+import PropTypes from 'prop-types';
 
 /**
  * Search - Represents the Search Component
  */
 class Search extends Component{
+    static propTypes =  {
+        updateBookShelf: PropTypes.func.isRequired,
+        searchBooks: PropTypes.func.isRequired
+    }
+
     state = {
         books: []
     }

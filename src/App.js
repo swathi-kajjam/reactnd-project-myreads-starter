@@ -51,13 +51,10 @@ class BooksApp extends Component{
                 if(this.state.books && this.state.books.length > 0) {
                     searchBooks.map(book => {
                         const b = this.state.books.find(b => b.id === book.id);
-                        if (b) {
-                            book.shelf = b.shelf;
-                        }
+                        book.shelf = b ? b.shelf : 'none';
                         return book
                     })
                 }
-
                return searchBooks;
             })
             .catch(e => console.error(e))

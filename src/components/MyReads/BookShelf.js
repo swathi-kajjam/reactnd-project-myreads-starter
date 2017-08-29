@@ -1,6 +1,7 @@
 import React from 'react';
 import BooksGrid from '../Common/BooksGrid';
 import { capitalizeFirstLetter } from '../../utils/Utility';
+import PropTypes from 'prop-types';
 
 /**
  * @description - Creates a BookShelf for a given Category
@@ -8,7 +9,6 @@ import { capitalizeFirstLetter } from '../../utils/Utility';
  * @returns {HTML} - The Dom needed for Book Shelf
  */
 function BookShelf(props){
-
     return(
         <div className="bookshelf">
             <h2 className="bookshelf-title">{capitalizeFirstLetter(props.category)}</h2>
@@ -17,6 +17,12 @@ function BookShelf(props){
             </div>
         </div>
     )
+}
+
+BookShelf.propTypes = {
+    category: PropTypes.string.isRequired,
+    books: PropTypes.array.isRequired,
+    updateBookShelf: PropTypes.func.isRequired
 }
 
 export default BookShelf;

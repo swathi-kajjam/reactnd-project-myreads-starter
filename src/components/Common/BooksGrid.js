@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from './Book';
+import PropTypes from 'prop-types';
 
 /**
  * @description - Creates the BookGrid for a given Category
@@ -18,6 +19,12 @@ function BooksGrid(props){
             }
         </ol>
     )
+}
+
+BooksGrid.propTypes = {
+    books: PropTypes.array.isRequired,
+    category: PropTypes.string,
+    updateBookShelf: PropTypes.func.isRequired
 }
 
 export default BooksGrid;
