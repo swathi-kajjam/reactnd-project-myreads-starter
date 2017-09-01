@@ -1,15 +1,16 @@
 ## Project Details
 Application: MyReads Application in React
+
 Description: MyReads is a bookshelf app, which allows users to search for books and add them to their bookshelf into following categories.[ "read", "want to read",  "currently reading"].
+
 Program: Udacity React Nanodegree Program
+
 Developed By: Swathi Kajjam
 
 
 ## Pages:
-MyReads - Allows users to see Currently Reading, Want to Read and Read criteria books
-          Allows users to change the book shelf
-Search -  Allows users to search for a book
-          Allows users to change the book shelf
+#MyReads - Allows users to see Currently Reading, Want to Read and Read criteria books and to change the book shelf
+#Search -  Allows users to search for a book and change the book shelf
 
 
 ## Installation Instruction:
