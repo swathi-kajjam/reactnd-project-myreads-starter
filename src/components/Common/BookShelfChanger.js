@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * BookShelfChanger - Represents the book shelf changer Component
+ * @description - Represents a book shelf changer Component
+ * @returns {HTML} - return DOM for book shelf changer
  */
 class BookShelfChanger extends Component{
 

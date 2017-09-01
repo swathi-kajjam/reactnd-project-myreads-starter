@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 /**
  * @description - Creates the BookGrid for a given Category
  * @param props - The props from parent component (Book Shelf / Search)
- * @returns {DOM} - return DOM for creating list of Books
+ * @returns {HTML} - return DOM for creating list of Books
  */
 function BooksGrid(props){
     return(

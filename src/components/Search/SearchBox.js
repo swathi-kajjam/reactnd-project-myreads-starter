@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 /**
- * SearchBox - Represents the SearchBox Component
+ * @description -Represents the SearchBox Component
+ * @returns {HTML} - The Dom needed for the Search Box
  */
 class SearchBox extends Component{
 

@@ -5,7 +5,8 @@ import SearchBox from './SearchBox';
 import PropTypes from 'prop-types';
 
 /**
- * Search - Represents the Search Component
+ * @description - Represents the Search Component
+ * @returns {HTML} - The Dom needed for the Search Component
  */
 class Search extends Component{
     static propTypes =  {
@@ -21,6 +22,7 @@ class Search extends Component{
      * @description - The handler which gets fired when search input gets changed
      * @param query - The query to Search books for
      * @param maxResults - The maximum number of results that needs to be returned on Search
+     * @returns {books} books based on the search query
      */
     handleSearch = (query, maxResults) => {
         query ? this.props.searchBooks(query, maxResults).then(books => this.setState({books})) : this.setState({books:[]})
