@@ -15,6 +15,7 @@ Developed By: Swathi Kajjam
 
 ## Installation Instruction:
 npm install
+
 npm start
 
 
